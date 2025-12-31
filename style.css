@@ -1,0 +1,1204 @@
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+  color: #1f2937;
+  background: #ffffff;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* ================= HEADER ================= */
+.header {
+  background: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.logo img {
+  width: 78px; /* increased logo size */
+  height: auto;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+/* NAV LINKS */
+nav a {
+  margin: 0 14px;
+  text-decoration: none;
+  color: #1f2937;
+  font-weight: 500;
+}
+
+/* NAV ACTIVE LINK */
+nav a {
+  position: relative;
+  padding-bottom: 6px;
+}
+
+nav a.active {
+  color: #22c55e; /* green highlight */
+  font-weight: 600;
+}
+
+/* underline effect like your screenshot */
+nav a.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  background: #22c55e;
+  border-radius: 2px;
+}
+
+/* NAV ACTION BUTTONS */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.call-now {
+  border: 1.5px solid #d1d5db;
+  color: #1f2937;
+  background: #ffffff;
+}
+
+.free-delivery {
+  background: #2f7d4a;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .header {
+    position: sticky;
+    top: 0;
+  }
+
+  .nav {
+    padding: 8px 0;
+  }
+
+  .logo img {
+    width: 60px; /* smaller logo */
+  }
+
+  .nav-actions {
+    flex-direction: row;
+    gap: 8px;
+  }
+
+  .nav-btn {
+    padding: 6px 14px;
+    font-size: 13px;
+  }
+}
+
+/* ================= HERO ================= */
+.hero {
+  position: relative;
+  min-height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:center/cover no-repeat;
+  transition: opacity 0.6s ease-in-out;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(45, 90, 50, 0.82);  /*rgba(45, 90, 50, 0.82)*/
+}
+
+.hero-content {
+  position: relative;
+  max-width: 720px;
+  margin-left: clamp(20px, 5vw, 70px);
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: auto;
+    padding: 60px 0;
+  }
+}
+
+
+/* HERO TEXT */
+.badge {
+  background: rgba(255,255,255,0.18);
+  padding: 8px 18px;
+  border-radius: 30px;
+  display: inline-block;
+  margin-bottom: 18px;
+  font-size: 14px;
+}
+
+.hero h1 {
+  font-size: 52px;
+  line-height: 1.15;
+}
+
+.arabic-name {
+  margin-top: 28px;   /* ⬅️ creates breathing room */
+  margin-bottom: 14px;
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+.hero p {
+  margin-top: 10px;
+  max-width: 560px;
+  line-height: 1.7;
+}
+
+/* HERO BUTTONS */
+.hero-buttons {
+  margin-top: 30px;
+  display: flex;
+  gap: 14px;
+}
+
+.btn {
+  padding: 14px 28px;
+  border-radius: 30px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.primary {
+  background: #22c55e;
+  color: #ffffff;
+}
+
+.secondary {
+  background: #ffffff;
+  color: #1f2937;
+}
+
+
+@media (max-width: 768px) {
+  .hero-content {
+    margin-left: 0;
+    padding: 0 16px;
+    text-align: center;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .hero .brand-ghost {
+    font-size: 42px;
+  }
+}
+
+
+/* ================= ABOUT ================= */
+.about {
+  padding: 80px 0;
+   background: #e5e5e5;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 2fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.about-card {
+  background: #ffffff;
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+.about-card img {
+  width: 120px;
+  margin-bottom: 15px;
+}
+
+/* SECTION TAG (used by About, Products, Contact) */
+.section-tag {
+  display: inline-block;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #1f2937;
+  margin-bottom: 16px;
+}
+
+/*.section-tag::after {
+  content: "";
+  display: block;
+  width: 46px;
+  height: 4px;
+  background: #56a975;
+  margin-top: 8px;
+  border-radius: 4px;
+}
+*/
+
+.about-text h2 {
+  font-size: 36px;
+}
+
+.about-text p {
+  line-height: 1.9;
+  margin-bottom: 26px;
+  color:#1F2937;
+                        /* #4b5563;*/
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: 60px 0;
+  }
+
+  .about-card {
+    padding: 30px 24px;
+  }
+}
+
+
+/* ================= PRODUCTS ================= */
+.services {
+  background: #f9fafb;
+  padding: 80px 0;
+}
+
+.center {
+  text-align: center;
+}
+
+.product-title {
+  font-size: 36px;
+  margin-top: 12px;
+}
+
+.product-subtitle {
+  max-width: 720px;
+  margin: 16px auto 40px;
+  color: #6b7280;
+  line-height: 1.7;
+}
+
+/* PRODUCT CARDS */
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 28px;
+}
+
+.category-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 18px;
+  text-align: center;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+  transition: all 0.3s ease;
+}
+
+.category-card:hover {
+  transform: translateY(-6px);
+}
+
+.category-image {
+  width: 100%;
+  height: 190px;
+  object-fit: contain;
+  border-radius: 14px;
+  margin-bottom: 16px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.category-image[loading="lazy"] {
+  opacity: 1;
+}
+
+.category-card h4 {
+  font-size: 15px;
+  margin-bottom: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: #1F2937;   /* clean charcoal, not too dark */
+  margin: 14px 0 10px;
+  text-align: center;
+}
+
+/* ENQUIRE BUTTON */
+.enquire-btn {
+  background: #56a975;
+  color: #ffffff;
+  padding: 10px 18px;
+  border-radius: 22px;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.whatsapp-btn {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+}
+
+/* ================= CTA ================= */
+.cta {
+  padding: 80px 0;
+}
+
+.cta-box {
+  position: relative;
+  border-radius: 20px;
+  padding: 70px 60px;     /* ⬅️ reduced padding */
+  min-height: 360px;      /* ⬅️ controlled height */
+  overflow: hidden;
+
+  background: url("images/free_delivery.png") 
+              center 35% / cover no-repeat;  /* ⬅️ key change */
+
+  display: flex;
+  align-items: center;
+}
+
+
+
+.cta-box h2 {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+/* ================= CTA BUTTON – VISIBILITY FIX ================= */
+
+.cta-buttons {
+  position: absolute;
+  left: 60px;
+  bottom: 30px;
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  height: 54px;
+  padding: 0 32px;
+
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+
+  color: #ffffff; /* white text */
+  transition: all 0.2s ease;
+}
+
+/* WhatsApp – Primary (visible green) */
+.cta-btn.whatsapp {
+  background: #2f7d4a; /* SAME AS HEADER GREEN */
+  box-shadow: 0 10px 24px rgba(47, 125, 74, 0.35);
+}
+
+/* Call – Secondary (lighter but visible) */
+.cta-btn.call {
+  background: #4fae78;
+  box-shadow: 0 10px 24px rgba(79, 174, 120, 0.35);
+}
+
+/* Hover */
+.cta-btn:hover {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .cta-box {
+    padding: 32px 20px;
+    min-height: auto;
+    background-position: center;
+  }
+
+  .cta-buttons {
+    position: static;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .cta-btn {
+    width: 100%;
+    max-width: 260px;
+  }
+}
+
+
+/* ================= CONTACT ================= */
+.contact {
+  background: #e5e5e5;
+  padding: 65px 0;
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.contact-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.contact-info-card {
+  background: #ffffff;
+  padding: 22px;
+  border-radius: 16px;
+}
+
+.contact-info-card i {
+  color: #56a975;
+  margin-bottom: 8px;
+}
+
+.contact-map iframe {
+  width: 100%;
+  min-height: 420px;   /* increase map height */
+  border-radius: 16px;
+  border: 0;
+}
+
+@media (max-width: 768px) {
+  .contact {
+    padding: 60px 0;
+  }
+
+  .contact-map iframe {
+    min-height: 380px
+  }
+}
+
+
+/* ================= FOOTER ================= */
+
+.site-footer {
+  background: #0f9a6c;
+  color: #ffffff;
+  padding: 28px 0 0;   /* reduced from 40px */
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1.2fr;
+  gap: 40px;
+  align-items: flex-start; /* KEY FIX */
+}
+
+
+.footer-logo {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.footer-logo img {
+  width: 48px;
+  background: #ffffff;
+  padding: 6px;
+  border-radius: 50%;
+}
+
+.footer-links a {
+  display: block;
+  color: #e7f5ef;
+  margin-bottom: 10px;
+  text-decoration: none;
+}
+
+.footer-links h4 {
+  margin-bottom: 14px;
+}
+
+/* SPACE BELOW CONTACT INFO HEADING */
+.footer-contact h4 {
+  margin-bottom: 16px;   /* increase space here */
+}
+
+/* FOOTER CONTACT INFO FIX */
+.footer-contact p {
+  display: flex;
+  align-items: flex-start;   /* aligns icon with first line */
+  gap: 8px;                 /* space between icon & text */
+  margin-bottom: 14px;       /* space between rows */
+  line-height: 1.6;          /* better readability */
+}
+
+/* ICON ALIGNMENT */
+.footer-contact i {
+  margin-top: 8px;           /* aligns icon vertically with text */
+  font-size: 14px;
+  opacity: 0.95;
+}
+
+
+.footer-bottom {
+  text-align: center;          /* CENTER TEXT */
+  padding: 14px 0;             /* reduced height */
+  font-size: 13px;
+  color: #ffffff;
+}
+
+/* LEFT-ALIGNED DIVIDER LINE */
+.footer-bottom::before {
+  content: "";
+  display: block;
+  width: 100%;
+  max-width: 1200px;              /* same as container */
+  height: 1px;
+  background: rgba(255,255,255,0.35);
+  margin: 0 auto 16px;            /* aligns with container */
+}
+
+@media (max-width: 768px) {
+  .footer-grid {
+    gap: 24px;
+  }
+
+  .site-footer {
+    padding-top: 32px;
+  }
+}
+
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+  .about-grid,
+  .contact-layout,
+  .footer-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .contact-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 38px;
+  }
+}
+
+/* ================= CLICK EFFECT ================= */
+.call-now,
+.free-delivery,
+.enquire-btn,
+.cta-btn,
+.btn {
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.call-now:active,
+.free-delivery:active,
+.enquire-btn:active,
+.cta-btn:active,
+.btn:active {
+  transform: scale(0.96);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15) inset;
+}
+.uae-flag {
+  width: 50px;
+  height: auto;
+  border-radius: 2px;
+}
+
+/* ================= TOP BAR MARQUEE ================= */
+.top-bar {
+  background: #2f9e5f;
+  overflow: hidden;
+}
+
+.top-bar-marquee {
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* MOVING TEXT */
+.marquee-track {
+  display: inline-flex;
+  align-items: center;
+  gap: 40px;
+  white-space: nowrap;
+  color: #ffffff;
+  font-size: 13px;
+
+ animation: marquee 32s linear infinite;
+}
+
+.marquee-track span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.marquee-track i {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  position: relative;
+  top: 1px; 
+}
+
+/* ANIMATION */
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Adjust 140px if your header height changes */
+section {
+  scroll-margin-top: 140px;
+}
+
+@media (max-width: 768px) {
+  section {
+    scroll-margin-top: 100px;
+  }
+}
+
+
+/* ================= SECTION TAG BASE ================= */
+.section-tag {
+  display: inline-block;
+  font-size: 38px;          /* bold & strong */
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: #374151;      
+}
+
+/* ================= CENTERED VERSION ================= */
+.section-tag.center {
+  display: block;
+  text-align: center;
+}
+
+/* underline directly under text */
+.section-tag.center span {
+  display: inline-block;
+  position: relative;
+}
+
+
+.section-tag.center span::after {
+  content: "";
+  position: absolute;
+  left: 0;                 /* starts from text beginning */
+  bottom: -10px;           /* close to text */
+  width: 46px;
+  height: 4px;
+  background: none;   /*#56a975;*/
+  border-radius: 4px;
+}
+/* Remove old underline for centered section tags */
+.section-tag.center::after {
+  content: none;
+}
+
+/* ================= ADD SPACE ABOVE "GET IN TOUCH" ONLY ================= */
+.contact h2 {
+  margin-top: 15px;   /* adjust value as needed */
+}
+
+
+/* ================= HERO TITLE FINAL CLEAN VERSION ================= */
+
+/* Main title */
+.hero .brand-title {
+  font-size: 52px;
+  font-weight: 800;
+  line-height: 1.15;
+  color: #ffffff;
+  margin-bottom: 10px; /* space before ghost */
+}
+
+/* Ghost text BELOW title */
+.hero .brand-ghost {
+  font-size: 60px;
+  font-weight: 800;
+  color:#ffffff;    /*rgba(255, 255, 255, 0.28);*/
+  line-height: 1;
+  margin-bottom: 28px; /* space before Arabic */
+  pointer-events: none;
+}
+
+/* Arabic spacing */
+.arabic-name {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+/* Paragraph spacing */
+.hero p {
+  margin-bottom: 32px;
+  max-width: 560px;
+  line-height: 1.7;
+}
+/* ================= FLOATING WHATSAPP ================= */
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 56px;
+  height: 56px;
+  background: #25d366;
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  text-decoration: none;
+  box-shadow: 0 10px 24px rgba(37, 211, 102, 0.45);
+  z-index: 9999;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover effect */
+.whatsapp-float:hover {
+  transform: scale(1.08);
+  box-shadow: 0 14px 32px rgba(37, 211, 102, 0.55);
+}
+
+/* Red notification badge */
+.wa-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background: #ff3b30;
+  color: #ffffff;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Product section paragraph text only */
+.services .product-subtitle {
+  color: #000000; /* black */
+}
+.working-hours {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.day {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.time {
+  color: #000000;
+}
+
+@media (max-width: 1024px) {
+  .hero h1 {
+    font-size: 44px;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .cta-box {
+    padding: 60px 40px;
+  }
+}
+
+/* ================= MOBILE HEADER FINAL FIX ================= */
+@media (max-width: 768px) {
+
+  .nav {
+    flex-direction: row !important;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-left {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  nav a {
+    margin: 4px 8px;
+    font-size: 14px;
+  }
+
+  .nav-actions {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .nav-btn {
+    padding: 6px 14px;
+    font-size: 13px;
+  }
+
+  .logo img {
+    width: 56px;
+  }
+}
+
+/* ================= CTA MOBILE HARD FIX ================= */
+
+@media (max-width: 768px) {
+
+  .cta-box {
+    padding: 24px 18px;
+    min-height: auto;
+  }
+
+  .cta-buttons {
+    position: static !important;
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .cta-btn {
+    width: 100%;
+    max-width: 260px;
+  }
+}
+
+
+/* ================= MOBILE HEADER BUTTON FIX ================= */
+
+@media (max-width: 768px) {
+
+  /* HEADER STACK */
+  .nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .nav-left {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* NAV LINKS — SINGLE LINE */
+  /* ================= MOBILE NAV SINGLE LINE FIX ================= */
+@media (max-width: 768px) {
+
+  nav {
+    display: flex;
+    flex-wrap: nowrap;          /* FORCE single line */
+    justify-content: space-between;
+    width: 100%;
+    white-space: nowrap;
+  }
+
+  nav a {
+    margin: 0 6px;              /* reduce spacing */
+    font-size: 13px;            /* slightly smaller */
+    padding: 4px 2px;
+  }
+}
+
+
+  /* ✅ FIX CALL NOW + FREE DELIVERY */
+  .nav-actions {
+    width: 100%;
+    display: flex;
+    justify-content: center;   /* CENTER buttons */
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;           /* allow wrap if needed */
+    margin-top: 4px;
+  }
+
+  .nav-btn {
+    padding: 8px 16px;
+    font-size: 14px;
+    white-space: nowrap;
+  }
+
+  .call-now {
+    order: 1;
+  }
+
+  .free-delivery {
+    order: 2;
+  }
+}
+
+/* ================= MOBILE CENTER FIX FOR CONTACT INFO ================= */
+
+@media (max-width: 768px) {
+
+  .footer-contact,
+  .contact-info,
+  .contact-details {
+    text-align: center;
+  }
+
+  .footer-contact p,
+  .contact-info p {
+    display: flex;
+    justify-content: center;   /* icon + text centered */
+    text-align: center;
+  }
+
+  .footer-contact i,
+  .contact-info i {
+    margin-top: 0;
+  }
+}
+
+
+/* ===== HERO BUTTON FORCE FIX ===== */
+
+.hero .hero-buttons .hero-call {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border: none !important;
+}
+
+.hero .hero-buttons .hero-call i {
+  color: #000000 !important;
+}
+
+.hero .hero-buttons .hero-whatsapp {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border: 1.5px solid #d1d5db !important;
+}
+
+.hero .hero-buttons .hero-whatsapp i {
+  color: #25d366 !important;
+}
+
+/* ================= MOBILE HERO GREEN BACKGROUND FIX ================= */
+@media (max-width: 768px) {
+
+  /* Remove hero image */
+  .hero-bg {
+    display: none;
+  }
+
+  /* Keep solid green background */
+  .hero {
+    background: #0F9A6C;
+  }
+
+  /* Remove overlay since image is gone */
+  .hero-overlay {
+    display: none;
+  }
+}
+
+/* ================= FORCE CONTACT LINKS TO WHITE ================= */
+
+/* Top bar phone/email */
+.top-bar a {
+  color: #ffffff !important;
+  text-decoration: none;
+}
+
+/* Contact section */
+.contact a {
+  color: #ffffff !important;
+  text-decoration: none;
+}
+
+/* Footer contact links */
+.site-footer a {
+  color: #ffffff !important;
+  text-decoration: none;
+}
+
+/* Prevent visited / active color change */
+.top-bar a:visited,
+.contact a:visited,
+.site-footer a:visited {
+  color: #ffffff !important;
+}
+
+/* ================= MOBILE CONTACT CENTER ALIGN FIX ================= */
+@media (max-width: 768px) {
+
+  .contact-info-card {
+    text-align: center;
+  }
+
+  .contact-info-card i {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+
+  .contact-info-card p,
+  .contact-info-card h4 {
+    text-align: center;
+  }
+}
+
+/* ================= HERO WHATSAPP ICON SIZE ONLY ================= */
+
+.hero-whatsapp i {
+  font-size: 24px;   /* increase WhatsApp icon size */
+}
+
+/* Optional: bigger on mobile */
+@media (max-width: 768px) {
+  .hero-whatsapp i {
+    font-size: 26px;
+  }
+}
+
+/* ================= MOBILE SECTION TITLE FIX (NO OVERLAP) ================= */
+@media (max-width: 768px) {
+
+  /* Hide original text */
+  .services .section-tag.center span {
+    color: transparent;
+    position: relative;
+  }
+
+  /* Disable underline pseudo-element */
+  .services .section-tag.center span::after {
+    content: none;
+  }
+
+  /* Inject new text safely */
+  .services .section-tag.center span::before {
+    content: "PRODUCTS";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #374151;        /* same as original */
+    font-size: inherit;
+    font-weight: inherit;
+    letter-spacing: inherit;
+    white-space: nowrap;
+  }
+}
+
+/* ================= MOBILE FOOTER CONTACT ICON FIX ================= */
+@media (max-width: 768px) {
+
+  .footer-contact {
+    text-align: center;
+  }
+
+  .footer-contact p {
+    display: flex;
+    flex-direction: column;   /* icon on top */
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 16px;
+  }
+
+  .footer-contact i {
+    margin: 0;
+    font-size: 18px;
+  }
+}
